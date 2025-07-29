@@ -1,20 +1,8 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/generate.js",
-      "use": "@vercel/node"
-    }
-  ],
+  "builds": [{ "src": "api/generate.js", "use": "@vercel/node" }],
   "routes": [
-    {
-      "src": "/api/generate",
-      "dest": "api/generate.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/index.html"
-    }
-  ],
-  "outputDirectory": "public"
+    { "src": "/api/(.*)", "dest": "/api/generate.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
